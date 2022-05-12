@@ -1,0 +1,351 @@
+.chat-bar-collapsible {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.collapsible {
+    background-color: transparent;
+    color: transparent;
+    cursor: pointer;
+    width: 75px;
+    outline: none;
+    font-size: 18px;
+	position:fixed;
+	right:30px;
+	z-index: 1000;
+	bottom:0;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+/*------------Header info ------------*/
+.headerbox {
+    width: 350px;
+    height: 50px;
+    /* background: rgba(15, 112, 168, 0.877); */
+    background: transparent;
+    background-image: linear-gradient(rgb(0, 162, 255), rgb(0, 225, 255));
+    border-color: rgb(0, 162, 255);
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+}
+
+.header-title {
+    color: #ffffff;
+    font-size: 20px;
+    font-family: Helvetica;
+    text-align:left;
+    width: 80%;
+    height: 50px;
+    margin-top: 4%;
+    margin-left: 5%;
+    float: left;
+}
+
+.dropdown-trigger {
+    cursor: pointer;
+    margin-right: 5px;
+    float: right;
+    margin-top: 3%;
+    width: 20%;
+    height: 50px;
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /* padding: 12px 16px; */
+    z-index: 1;
+}
+  
+.dropdown-trigger:hover .dropdown-content {
+    display: block;
+}
+
+/* css for dropdown menu of the bot */
+
+#close,
+#restart,
+#clear {
+  cursor: pointer;
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: #060dcfc7;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.full-chat-block {
+    width: 350px;
+    background: white;
+    text-align: center;
+    overflow: auto;
+    scrollbar-width: none;
+    height: max-content;
+    transition: max-height 0.2s ease-out;
+}
+
+.outer-container {
+    min-height: 500px;
+    bottom: 0%;
+    position: relative;
+}
+
+.chat-container {
+    max-height: 500px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    scroll-behavior: smooth;
+    hyphens: auto;
+}
+
+.chat-container::-webkit-scrollbar {
+    display: none;
+}
+
+.chat-bar-input-block {
+    display: flex;
+    float: left;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 0px 10px 10px;
+}
+
+.chat-bar-icons {
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    width: 25%;
+    float: right;
+    font-size: 20px;
+}
+
+#chat-icon:hover {
+    opacity: .7;
+}
+
+/* Chat bubbles */
+
+#userInput {
+    width: 75%;
+}
+
+.input-box {
+    float: left;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 12px;
+    color: #000;
+    background-color: white;
+    outline: none
+}
+
+.userText {
+    color: white;
+    font-family: Helvetica;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: right;
+    word-wrap: break-word;
+    clear: both;
+}
+
+.userText span {
+    line-height: 1.5em;
+    word-wrap: break-word;
+    display: inline-block;
+    background: #5ca6fa;
+    padding: 10px;
+    border-radius: 8px;
+    border-bottom-right-radius: 2px;
+    max-width: 80%;
+    margin-right: 10px;
+    animation: floatup .5s forwards
+}
+
+.botText {
+    color: #000;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.botText span {
+    line-height: 1.5em;
+    word-wrap: break-word;
+    display: inline-block;
+    background: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    border-bottom-left-radius: 2px;
+    max-width: 80%;
+    margin-left: 10px;
+    animation: floatup .5s forwards
+}
+
+.urlText {
+    color: blue;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.urlText span {
+    line-height: 1.5em;
+    word-wrap: break-word;
+    display: inline-block;
+    background: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    border-bottom-left-radius: 2px;
+    max-width: 80%;
+    margin-left: 10px;
+    animation: floatup .5s forwards
+}
+
+@keyframes floatup {
+    from {
+        transform: translateY(14px);
+        opacity: .0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .full-chat-block {
+        width: 100%;
+        border-radius: 0px;
+    }
+    .chat-bar-collapsible {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+    .collapsible {
+        width: 100%;
+        border: 0px;
+        border-top: 3px solid white;
+        border-radius: 0px;
+    }
+}
+
+.singleCard {
+    padding-left: 5%;
+    padding-right: 10px;
+}
+  
+ /* css for image card */
+  
+.imgcard {
+    object-fit: cover;
+    width: 80%;
+    height: 50%;
+    border-radius: 10px;
+    margin-left: 1%;
+}
+  
+  /* css for markdown images */
+  
+.imgcard_mrkdwn {
+    width: 80%;
+    border-radius: 10px;
+    margin-left: 1%;
+}
+
+.clearfix {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.botAvatar {
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 5px;
+    float: left;
+    /* border: 2px solid  #060DCF ; */
+}
+
+.userAvatar {
+    animation: animateElement linear 0.3s;
+    animation-iteration-count: 1;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 5px;
+    float: right;
+    /* border: 2px solid  #060DCF ; */
+}
+
+/* css for suggestions buttons */
+
+.suggestions {
+    padding: 5px;
+    width: 80%;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 2px 5px 5px 1px #dbdade;
+}
+  
+.menuTitle {
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+  
+.menu {
+    padding: 5px;
+}
+  
+.menuChips {
+    display: block;
+    background: transparent;
+    background-image: linear-gradient(rgb(0, 162, 255), rgb(0, 225, 255));
+    border-color: rgb(0, 162, 255);
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 14px;
+    word-wrap: break-word;
+}

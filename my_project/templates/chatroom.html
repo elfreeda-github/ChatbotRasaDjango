@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chatbot with django and Rasa</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/chat.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+		<!--- ChatBot ---->
+        <div id="chat-button" type=button class="collapsible">
+            <img src="{% static 'images/bot.png' %}" alt="{% static 'images/bot.png' %}" width="50px" height="50px"></img>
+        </div>
+		<div class="chat-bar-collapsible">
+			<div class="content">
+                <div class="headerbox">
+                    <div class="header-title">JAMA CHATBOT</div>
+                    <div class="dropdown-trigger" style="float:right;" data-target="dropdown1">
+                        <i class="fa fa-ellipsis-v" style="font-size:24px;color:white"></i>
+                        <div class="dropdown-content">
+                            <a id="clear">Clear</a>
+                            <a id="restart">Restart</a>
+                            <a id="close">Close</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="full-chat-block">
+                    <!---Message Container-->
+                    <div class="outer-container">
+                        <div class="chat-container">
+                            <!---Messages-->
+                            <div id="chatbox" class="chatbox">
+                                <h5 id="chat-timestamp"></h5>
+                                <p id="botStarterMessage" class="botText"></p>
+                            </div>
+
+                            <!-- User input box -->
+                            <div class="chat-bar-input-block">
+                                <div id="userInput">
+                                    <input id="textInput" class="input-box" type="text"  name="msg"
+                                    placeholder="Tap 'Enter' to send a message">
+                                    <p></p>
+                                </div>
+
+                                <div class="chat-bar-icons">
+                                    <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>
+                                    <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                                </div>
+
+                            </div>
+
+                            <div id="chat-bar-bottom">
+                                <p></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<!--- ChatBot End --->
+	
+</body>
+	<script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+	<script src="{% static 'js/chat.js' %}"></script>
+	<script src="{% static 'js/responses.js' %}"></script>
+</html>
