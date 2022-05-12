@@ -1,0 +1,127 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: reading file
+  steps:
+  - intent: file_read
+  - action: utter_button
+  - intent: file_val
+  - action: action_read_file
+  - intent: gratitude
+  - action: utter_welcome
+
+- story: website info 
+  steps:
+  - intent: more_info
+  - action: utter_url
+  - intent: gratitude
+  - action: utter_welcome
+
+- story: viewing inline url
+  steps:
+  - intent: inline_url
+  - action: utter_inline
+  - intent: gratitude
+  - action: utter_welcome
+
+- story: requesting weather
+  steps:
+  - intent: api_read
+  - action: utter_ask_city_name
+  - intent: api_city
+  - action: action_get_weather_api
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: requesting ALM APIs
+  steps:
+  - intent: alm_details
+  - action: action_get_alm_api
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: requesting Jama APIs
+  steps:
+  - intent: jama_details
+  - action: action_get_jama_api
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: give shirt story 1
+  steps:
+  - intent: ask_me_anything
+  - action: utter_ask_shirt_size
+  - intent: give_shirt_size
+    entities:
+    - shirt_size: large
+  - slot_was_set:
+    - shirt_size: large
+  - action: utter_remember
+  - intent: repeat_shirt_size
+  - action: action_say_shirt_size
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: give shirt story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: repeat_shirt_size
+  - action: action_say_shirt_size
+  - intent: ask_me_anything
+  - action: utter_ask_shirt_size
+  - intent: give_shirt_size
+    entities:
+    - shirt_size: large
+  - slot_was_set:
+    - shirt_size: large
+  - action: utter_remember
+  - intent: repeat_shirt_size
+  - action: action_say_shirt_size
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: name path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: tell_name
+  - action: utter_ask_name
+  - intent: give_name
+    entities:
+    - name: elfreeda
+  - slot_was_set:
+    - name: elfreeda
+  - action: utter_remember_name
+  - intent: repeat_name
+  - action: action_say_name
+

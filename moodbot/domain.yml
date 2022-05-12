@@ -1,0 +1,138 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - gratitude
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - more_info
+  - inline_url
+  - file_read
+  - file_val
+  - alm_details
+  - jama_details
+  - api_read
+  - api_city
+  - ask_me_anything
+  - repeat_shirt_size
+  - give_shirt_size
+  - tell_name
+  - repeat_name
+  - give_name
+
+entities:
+- shirt_size
+- name
+
+slots:
+  shirt_size:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: shirt_size
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: name
+
+actions:
+  - action_read_file
+  - action_say_shirt_size
+  - utter_ask_shirt_size
+  - utter_remember
+  - action_receive_name
+  - action_say_name
+  - utter_ask_name
+  - utter_remember_name
+  - action_get_weather_api
+  - utter_ask_city_name
+  - action_get_jama_api
+  - action_get_alm_api
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_url:
+  - text: "URL for ALM Handbook : https://alm.rockwellcollins.com/wiki/display/HANDBOOKW/ALM+Handbook+Home "
+
+  utter_inline:
+  - text: "Please Submit [Support Ticket](https://missupport.rockwellcollins.com/support/servicedesk/customer/portal/12)"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/QnkFrG3b.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_welcome:
+  - text: "Welcome"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_shirt_size:
+  - text: "What is your shirt size?"
+
+  utter_ask_city_name:
+  - text: "What is your city name?"
+
+  utter_ask_name:
+  - text: "What is your name?"
+
+  utter_remember:
+  - text: "Thanks. I'll remember that."
+
+  utter_remember_name:
+  - text: "Thanks. I'll remember you as: {name}!"
+
+  utter_button:
+      - text: "Select the file to read"
+        buttons:
+        - title: "textFile"
+          payload: "textFile"
+        - title: "pdfFile"
+          payload: "pdfFile"
+
+  utter_file_data:
+  - text: "File data is as follows: \n
+           {data} \n"
+  
+  utter_alm_data:
+  - text: "-PluginName: {pluginName}\n
+           -PluginType: {pluginType}\n
+           -Version: {pluginVersion}"
+
+  utter_jama_data:
+  - text: "-id: {id}\n
+           -username: {username}\n
+           -firstName: {firstName}\n
+           -lastName: {lastName}\n
+           -email: {email}\n
+           -licenseType: {licenseType}\n
+           -active:{active}\n
+           -type: {type}"
+
+  # utter_inline:
+  #     - text: "Select the file to read"
+  #       links:
+  #       - inline: "ALM Development space"
+  #         url: "https://alm.rockwellcollins.com/wiki/display/ALMDEVW"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

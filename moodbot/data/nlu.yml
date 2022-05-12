@@ -1,0 +1,325 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thank you
+
+- intent: gratitude
+  examples: |
+    - thank you
+    - pleasure
+    - gratitude
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: more_info
+  examples: |
+    - website
+    - about
+    - additional detail
+    - detail about ALM Handbook
+    - ALM Handbook
+    - where can I find the documentation for ALM
+    - documentation for ALM
+
+- intent: inline_url
+  examples: |
+    - inline url
+    - data on inline
+    - get inline text
+    - see the web
+    - web
+    - i want to submit a support ticket
+    - jama support ticket
+    - support ticket
+    - ticket
+
+- intent: file_read
+  examples: |
+    - file
+    - read file
+    - get me details
+    - details
+
+- intent: file_val
+  examples: |
+    - data science
+    - table of contents
+    - txtFile
+    - pdfFile
+
+- intent: alm_details
+  examples: |
+    - get slpr detail
+    - read ALM API
+    - get plugins
+
+- intent: jama_details
+  examples: |
+    - get jama detail
+    - read jama API
+    - jama users
+
+- intent: api_read
+  examples: |
+    - get me temperature details
+    - weather status
+    - how hot is my city
+
+- intent: api_city
+  examples: |
+    - delhi
+    - bangalore
+    - kolkata
+    - mumbai
+    - jaipur
+    - chennai
+    - Ahmedabad
+    - Hyderabad
+    - Surat
+    - Pune
+    - Telangana
+    - Lucknow
+    - kochi
+    - New Delhi
+    - Chandigarh 
+    - Varanasi
+    - Visakhapatanam
+    - Madurai
+    - Agra
+    - Kanpur
+    - Patna
+    - Bhopal
+    - Amritsar
+    - Nagpur
+    - Nashik
+    - Coimbatore
+    - Rajkot
+    - Vadodara
+    - Indore
+    - Kashmir
+    - Leh Ladak
+    - Sikkim
+    - Manali
+    - Punjab
+    - Prayagraj
+    - Kerala
+    - Alepi
+    - Thiruvananthapuram
+    - Jamshedhpur
+    - Jodhpur
+    - Ludhiana
+    - Meerut
+    - Raipur
+    - Vijayawada
+    - Jabalpur
+    - Gwalior
+    - Bhubaneshwar
+    - Dehradun
+    - Ranchi
+    - Faridabad
+    - Aurangabad
+    - Dhanbad
+    - Mysuru
+    - Mangalore
+    - Udupi
+    - Chikmagalur
+    - Kozhikode
+    - Guwahati
+    - Kota
+    - Tiruchanappalli
+    - Udaipur
+    - Thrissur
+    - Asansol
+    - austin
+    - Austin
+    - New York
+    - new york
+    - Nashville
+    - Chicago
+    - Phoenix
+    - Boston
+    - Denver
+    - San Diego
+    - Atlanta
+    - Washington D.C.
+    - Los Angeles
+    - Columbus
+    - San Francisco
+    - Indianapolis
+    - Oklahoma City
+    - San Antonio
+    - Seattle
+    - Raleigh
+    - San Jose
+    - Portland
+    - Houston
+    - Sacramento
+    - Philadelphia
+    - New Orleans
+    - Dallas
+    - Milwaukee
+    - Omaha
+    - Charlotte
+    - Las Vegas
+    - Colorado Springs
+    - Honolulu
+    - Kansas City
+    - Jacksonville
+    - Memphis
+    - Baltimore
+    - Fort Worth
+    - Madison
+    - Virginia Beach
+    - Minneapolis
+    - Louisville
+    - Tulsa
+    - Albuquerque
+    - Miami
+    - Detroit
+    - El Paso
+    - Fresno
+    - Wichita
+    - Salt Lake City
+    - Arlington
+    - Mesa
+
+- intent: ask_me_anything
+  examples: |
+    - ask me anything
+    - would you like to ask me something
+    - feel free to ask me about things
+    - want to ask me something?
+
+- intent: repeat_shirt_size
+  examples: |
+    - what is my shirt size
+    - tell me my shirt size
+    - do you know my shirt size
+    - repeat my shirt size
+
+- intent: give_shirt_size
+  examples: |
+    - i want a [large](shirt_size) shirt
+    - [medium](shirt_size) size
+    - give me a [small](shirt_size) tshirt
+    - [small](shirt_size)
+    - [medium](shirt_size)
+    - [large](shirt_size)
+    - i'd prefer [medium](shirt_size) size
+    - gimme gimme gimme [small](shirt_size) tshirt
+    - give shirt size
+    - i want a [large](shirt_size) shirt please
+    - i want to give you my shirt
+
+- intent: tell_name
+  examples: |
+    - i want to tell you my name
+    - give name
+    - ill give you my name
+    - do you want to know my name?
+
+- intent: repeat_name
+  examples: |
+    - what is my name
+    - tell me my name
+    - do you know my name
+    - repeat my name
+  
+- intent: give_name
+  examples: |
+    - elfreeda
+    - Elfreeda
+    - ratnakar
+    - Ratnakar
+    - divya 
+    - Divya
+    - anusha
+    - Anusha
+    - Tim
+    - tim
